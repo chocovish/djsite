@@ -1,0 +1,16 @@
+{% extends "music/base.html" %}
+{% block body %}
+<center>
+<div class="col-sm-offset-4 col-sm-4">
+<div class="panel panel-primary">
+  <div class="panel-heading">Confirm Delete</div>
+<div class="panel-body">
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ object }}"?</p>
+    <input type="submit" value="Confirm" class="btn btn-danger"/>
+</form>
+</div>
+</div>
+</div>
+</center>
+{% endblock %}

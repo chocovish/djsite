@@ -1,0 +1,30 @@
+{% extends 'music/base.html' %}
+
+{% block title %} Music details {% endblock %}
+
+{% block body %}
+
+
+{% for album in all_albums %}
+
+<div class="container col-sm-3">
+   <div class="panel panel-default">
+      <div class="container">
+      <br>
+      <img src="{{album.album_art}}" width="320px" height="320px">
+      <br><br>
+
+      <a class="btn btn-primary" href="{{ album.id }}/">{{ album.album_title }}</a>
+         <a class="btn btn-success " href="{% url 'music:update-album' album.id %}"><span class="glyphicon glyphicon-edit"></span></a>
+         <a class="btn btn-danger " href="{% url 'music:delete-album' album.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+      
+
+
+      <br><br>
+      </div>
+   </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

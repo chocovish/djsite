@@ -1,0 +1,27 @@
+{% extends 'music/base.html' %}
+
+{% block title %}Songs of {{album}}{% endblock %}
+
+{% block body %}
+<div class="col-sm-5">
+<div class="col-sm-7">
+<div class="panel panel-primary ">
+  <div class="panel-heading"><h4>Album Details</h4></div>
+  <div class="panel-body">
+      <img src="{{album.album_art}}" width="310px" height="310px" >
+  </div>
+</div>
+</div>
+<div class="col-sm-5">
+<div class="panel panel-primary ">
+  <div class="panel-heading"><h4>Album Details</h4></div>
+  <div class="panel-body">
+<ul>
+  {% for song in album.song_set.all %}
+    <li>{{song.song_title}}</li>
+  {% endfor %}
+</ul>
+  </div>
+</div>
+</div>
+{% endblock %}
